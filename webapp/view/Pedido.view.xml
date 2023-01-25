@@ -1,0 +1,183 @@
+<mvc:View controllerName="com.coopersap.relatorioedu.controller.Pedido"
+    displayBlock="true"
+    xmlns="sap.uxap"
+    xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:forms="sap.ui.layout.form">
+    <m:App id="app">
+        <m:pages>
+    <m:Page id="page" showHeader="false">
+        <ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="false">
+            <headerTitle>
+                <ObjectPageDynamicHeaderTitle>
+                    <expandedHeading>
+                        <m:Title text="Lista de Compra" />
+                    </expandedHeading>
+    
+                    <snappedHeading>
+                        <m:HBox>
+                           
+                            <m:VBox>
+                                <m:Title text="Lista de Compra" />
+                                <m:Label text="Nº da Ordem - {}" />
+                            </m:VBox>
+                        </m:HBox>
+                    </snappedHeading>
+    
+                    <expandedContent>
+                        <m:Label text="Nº da Ordem - {}"/>
+                    </expandedContent>
+    
+                    <snappedTitleOnMobile>
+                        <m:Title text="Lista de Compra" />
+                    </snappedTitleOnMobile>
+    
+                    
+                </ObjectPageDynamicHeaderTitle>
+            </headerTitle>
+    
+            <headerContent>
+                <m:FlexBox wrap="Wrap" fitContainer="true">
+                   
+    
+                    <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                        <m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+                            <m:Label text="Manufacturer:" class="sapUiTinyMarginEnd" />
+                            <m:Text text=" Robotech" />
+                        </m:HBox>
+    
+                        <m:HBox class="sapUiTinyMarginBottom" renderType="Bare">
+                            <m:Label text="Factory:" class="sapUiTinyMarginEnd" />
+                            <m:Text text=" Orlando, Florida" />
+                        </m:HBox>
+    
+                        <m:HBox>
+                            <m:Label text="Supplier:" class="sapUiTinyMarginEnd" />
+                            <m:Link text="Robotech (234242343)" />
+                        </m:HBox>
+                    </m:VBox>
+    
+                    <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                        <m:Title text="Status" class="sapUiTinyMarginBottom" />
+                        <m:ObjectStatus text="Delivery"
+                            state="Success"
+                            class="sapMObjectStatusLarge" />
+                    </m:VBox>
+    
+                    <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                        <m:Title text="Delivery Time" class="sapUiTinyMarginBottom" />
+                        <m:ObjectStatus text="12 Days"
+                            icon="sap-icon://shipping-status"
+                            class="sapMObjectStatusLarge" />
+                    </m:VBox>
+    
+                    <m:VBox class="sapUiLargeMarginEnd sapUiSmallMarginBottom">
+                        <m:Title text="Assembly Option" class="sapUiTinyMarginBottom" />
+                        <m:ObjectStatus text="To Be Selected"
+                            state="Error"
+                            class="sapMObjectStatusLarge" />
+                    </m:VBox>
+    
+                    <m:VBox class="sapUiLargeMarginEnd">
+                        <m:Title text="Monthly Leasing Instalment" class="sapUiTinyMarginBottom" />
+                        <m:ObjectNumber number="379.99"
+                            unit="USD"
+                            emphasized="false"
+                            class="sapMObjectNumberLarge" />
+                    </m:VBox>
+                </m:FlexBox>
+            </headerContent>
+    
+            <sections>
+                <ObjectPageSection titleUppercase="false"  showTitle="false">
+                    <subSections>
+                        
+                        <ObjectPageSubSection title="Lista de Compras" showTitle="false">
+                            <blocks>
+                                <m:Table class="sapUxAPObjectPageSubSectionAlignContent" width="auto" items="{lista>/results}">
+                                    <m:headerToolbar>
+                                        <m:OverflowToolbar>
+                                            <m:Title text="Lista de Compras" level="H2" />
+                                            <m:ToolbarSpacer />
+                                            <m:SearchField width="17.5rem" />
+                                            <m:OverflowToolbarButton tooltip="Sort"
+                                                text="Sort"
+                                                icon="sap-icon://sort" />
+                                            <m:OverflowToolbarButton tooltip="Filter"
+                                                text="Filter"
+                                                icon="sap-icon://filter" />
+                                            <m:OverflowToolbarButton tooltip="Group"
+                                                text="Group"
+                                                icon="sap-icon://group-2" />
+                                            <m:OverflowToolbarButton tooltip="Settings"
+                                                text="Settings"
+                                                icon="sap-icon://action-settings" />
+                                        </m:OverflowToolbar>
+                                    </m:headerToolbar>
+    
+                                    <m:columns>
+                                        
+                                        <m:Column  minScreenWidth="Tablet" demandPopin="true">
+                                            <m:Text text="Nº do Item" />
+                                        </m:Column>
+                                        <m:Column  minScreenWidth="Tablet" hAlign="Center" demandPopin="true">
+                                            <m:Text text="Nº do Material" />
+                                        </m:Column>
+                                        <m:Column  minScreenWidth="Tablet" hAlign="Center" demandPopin="true">
+                                            <m:Text text="Descrição" />
+                                        </m:Column>     
+                                        <m:Column hAlign="End">
+                                            <m:Text text="Unidade de Medida" />
+                                        </m:Column>
+                                    </m:columns>
+    
+                                    <m:items>
+                                        <m:ColumnListItem><m:cells>
+                                            
+                                            <m:Text text="{lista>numDoItem}" />
+                                            <m:Text text="{lista>numMaterial}"/>
+                                            <m:Text text="{lista>descricao}" />
+                                            <m:Text text="{lista>unidMedida}" />
+                                            </m:cells>
+                                        </m:ColumnListItem>
+                                    </m:items>
+                                </m:Table>
+                            </blocks>
+                        </ObjectPageSubSection>
+                    </subSections>
+                </ObjectPageSection>
+    
+               
+            </sections>
+        </ObjectPageLayout>
+        <m:footer>
+            <m:OverflowToolbar>
+                <m:ToolbarSpacer/>
+                <m:Button
+                    text="Voltar"
+                    press="onPressVoltar"/>
+                
+            </m:OverflowToolbar>
+        </m:footer>
+    </m:Page>
+</m:pages>
+</m:App>
+</mvc:View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

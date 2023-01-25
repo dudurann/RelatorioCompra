@@ -1,3 +1,11 @@
+Relatório de Compras feito para estudo, utilizando FIORI:
+
+![image](https://user-images.githubusercontent.com/83682352/214689501-34881877-8a16-45dc-8289-76397adee9b0.png)
+
+![image](https://user-images.githubusercontent.com/83682352/214689097-a269507d-4b95-4ba8-aaeb-f18f5dedf5dc.png)
+
+
+
 ## Application Details
 |               |
 | ------------- |
